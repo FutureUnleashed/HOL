@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="FutureUnleashedUWP.RPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FutureUnleashedUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" x:Name="C1"/>
+            <ColumnDefinition Width="*" x:Name="C2"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120" x:Name="R1"/>
+            <RowDefinition Height="*" x:Name="R2"/>
+        </Grid.RowDefinitions>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="wideView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="C1.Width" Value="120"/>
+                        <Setter Target="titleText.Text" Value="FutureUnleashed (Desktop)"/>
+                        <Setter Target="image2.(RelativePanel.RightOf)" Value="image1"/>
+                        <Setter Target="image2.(RelativePanel.Below)" Value=""/>                        
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="narrowView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="C1.Width" Value="20"/>
+                        <Setter Target="titleText.Text" Value="FutureUnleashed (Mobile)"/>
+                        <Setter Target="image2.(RelativePanel.RightOf)" Value=""/>
+                        <Setter Target="image2.(RelativePanel.Below)" Value="tb1"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <TextBlock Text="FutureUnleashed" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource HeaderTextBlockStyle}" x:Name="titleText"/>
+
+        <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Orientation="Horizontal">
+            <RelativePanel Margin="10">
+                <Image x:Name="image1" Source="Assets/200.png" Width="200" Height="200"/>
+                <TextBlock x:Name="tb1" Text="Section 1" TextAlignment="Center" RelativePanel.Below="image1" RelativePanel.AlignHorizontalCenterWith="image1"/>
+                <Image x:Name="image2" Source="Assets/200.png" Width="200" Height="200" RelativePanel.RightOf="image1"/>
+                <TextBlock x:Name="tb2" Text="Section 1" TextAlignment="Center" RelativePanel.Below="image2" RelativePanel.RightOf="image1" RelativePanel.AlignHorizontalCenterWith="image2"/>
+            </RelativePanel>
+        </StackPanel>
+
+    </Grid>
+</Page>

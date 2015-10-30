@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      Media Element XAML for roaming data page
+    </Title>
+    <Description>
+      Media Element XAML for roaming data page
+    </Description>
+
+    <Shortcut>
+      roamingdatamediaelement
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="XAML">
+      <![CDATA[
+         <VariableSizedWrapGrid Orientation="Horizontal" Grid.ColumnSpan="2" Grid.Row="1" HorizontalAlignment="Center">
+            <MediaElement x:Name="mediaElement" Source="Assets/countdown.mp3" CurrentStateChanged="mediaElement_CurrentStateChanged" Width="400" Height="200" AreTransportControlsEnabled="True" AutoPlay="False" />
+        </VariableSizedWrapGrid>
+	]]></Code>
+  </Snippet>
+</CodeSnippet>

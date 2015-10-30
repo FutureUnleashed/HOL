@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      Button click handler in MainPage.xaml.cs
+    </Title>
+    <Description>
+      Button click handler in MainPage.xaml.cs
+    </Description>
+
+    <Shortcut>
+      mainpagebuttonclickcode
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp">
+      <![CDATA[
+		private void Button_Click(object sender, RoutedEventArgs e)
+		{
+			var senderButton = sender as Button;
+
+			switch (senderButton.Name)
+			{
+				case "RelativePanel":
+					//this.Frame.Navigate(typeof(RPanel));
+					break;
+
+				case "Tiles":
+					//LaunchNVApps();
+					break;
+
+				case "Toasts":
+					//this.Frame.Navigate(typeof(ToastPage));
+					break;
+
+				case "ContextMenu":
+					//this.Frame.Navigate(typeof(ContextMenu));
+					break;
+
+				case "Data":
+					//this.Frame.Navigate(typeof(RoamingData));
+					break;
+
+				case "BGTask":
+					//this.Frame.Navigate(typeof(BGTaskPage));
+					break;
+
+				case "BGTransfer":
+					//this.Frame.Navigate(typeof(BackgroundTransfer));
+					break;
+
+				case "Cortana":
+					//this.Frame.Navigate(typeof(CortanaPage));
+					break;
+
+				case "Share":
+					//this.Frame.Navigate(typeof(ShareSource));
+					break;
+
+				default:
+					break;
+			}
+		}
+
+		//private async void LaunchNVApps()
+		//{
+		//	await Launcher.LaunchUriAsync(new Uri("ms-windows-store://pdp/?ProductId=9nblggh5xsl1", UriKind.RelativeOrAbsolute));            
+		//}
+	]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

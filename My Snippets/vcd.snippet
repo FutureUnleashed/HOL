@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+	Voice command definition file for Cortana 
+    </Title>
+    <Description>
+	Voice command definition file for Cortana 
+    </Description>
+
+    <Shortcut>
+	VCD
+    </Shortcut>
+
+    <Author>Aparna</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="XML"><![CDATA[
+      
+     <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="UniversalAppCommandSet_en-us">
+    <CommandPrefix>apchin</CommandPrefix>
+    <Example> Show Mumbai in places </Example>
+
+    <Command Name="showPlaces">
+      <Example>  Show places to visit in Mumbai  </Example>
+      <ListenFor > Show places [to] [visit] in Mumbai </ListenFor>
+
+      <ListenFor > [show] [me] [some] places [to] [visit] at Mumbai </ListenFor>
+
+      <Feedback> Showing places </Feedback>
+      <Navigate/>
+    </Command>
+
+
+  </CommandSet>
+</VoiceCommands>
+
+
+ 
+
+	]]></Code>
+  </Snippet>
+</CodeSnippet>

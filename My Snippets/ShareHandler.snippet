@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+	C# Code for ShareHandler Share Source 
+    </Title>
+    <Description>
+	C# Code for ShareHandler Share Source 
+    </Description>
+
+    <Shortcut>
+	ShareHandler
+    </Shortcut>
+
+    <Author>Aparna</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp"><![CDATA[
+      
+       
+	       private async void ShareHandler(DataTransferManager sender, DataRequestedEventArgs args)
+        {
+
+
+            DataRequest request = args.Request;
+            request.Data.Properties.Title = "Share Example";
+            request.Data.Properties.Description = "A demonstration that shows how to share.";
+
+            if (Options == 0)
+            {
+                //  SHARE TEXT 
+                request.Data.SetText("Hello World! I am sharing this text from my Share Source app");
+            }
+           
+
+            //else
+            //if (Options == 1)
+            //{
+            //    //  SHARE HTML 
+
+            //    string htmlExample = "<h1>This is a Heading</h1><p> This is a paragraph.</p>";
+            //    string htmlFormat = HtmlFormatHelper.CreateHtmlFormat(htmlExample);
+                
+            //    request.Data.SetHtmlFormat(htmlFormat);
+
+
+            //}
+
+            //else
+            //    if (Options == 2)
+            //{
+            //    // SHARE FILE 
+            //    DataRequestDeferral deferral = request.GetDeferral();
+
+            //    // Make sure we always call Complete on the deferral.
+            //    try
+            //    {
+            //        StorageFile logoFile =
+            //            await Package.Current.InstalledLocation.GetFileAsync("Assets\\1000.png");
+            //        List<IStorageItem> storageItems = new List<IStorageItem>();
+            //        storageItems.Add(logoFile);
+            //        request.Data.SetStorageItems(storageItems);
+            //    }
+            //    finally
+            //    {
+            //        deferral.Complete();
+            //    }
+            //}
+
+        }
+
+	]]></Code>
+  </Snippet>
+</CodeSnippet>

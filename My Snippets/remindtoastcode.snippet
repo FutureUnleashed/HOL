@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      C# Code for reminder toast
+    </Title>
+    <Description>
+      C# Code for reminder toast
+    </Description>
+
+    <Shortcut>
+      remindtoastcode
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp">
+      <![CDATA[
+        private void ShowReminder()
+        {
+            string myXml = @"
+                            <toast scenario=""reminder"">
+                              <visual>
+                                <binding template=""ToastGeneric"">
+                                  <text>Adam's Hiking Camp</text>
+                                  <text>You have an upcoming event for this Friday!</text>
+                                  <text>RSVP before it""s too late.</text>
+                                  <image placement=""appLogoOverride"" src=""Assets\44.png"" />
+                                  <image placement=""inline"" src=""Assets/hiking.png"" />
+                                </binding>
+                              </visual>
+                              <actions>
+                                <action activationType=""background"" content=""RSVP"" arguments=""rsvp"" />
+                                <action activationType=""background"" content=""Reminder me later"" arguments=""later"" />
+                              </actions>
+                            </toast>
+                            ";
+
+            XmlDocument myToastXml = new XmlDocument();
+            myToastXml.LoadXml(myXml);
+
+            ToastNotification myToast = new ToastNotification(myToastXml);
+            ToastNotificationManager.CreateToastNotifier().Show(myToast);
+        }
+	]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

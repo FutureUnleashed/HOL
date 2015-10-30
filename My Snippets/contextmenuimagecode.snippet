@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      C# Code for Image Flyout Event Handlers
+    </Title>
+    <Description>
+      C# Code for Image Flyout Event Handlers
+    </Description>
+
+    <Shortcut>
+      contextmenuimagecode
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp">
+      <![CDATA[
+        private void Image_Tapped(object sender, TappedRoutedEventArgs e)
+        {
+            FlyoutBase.ShowAttachedFlyout((FrameworkElement)sender);
+
+        }
+
+        private void ImageMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
+        {
+            MenuFlyoutItem item = sender as MenuFlyoutItem;
+
+            if (item != null)
+            {
+                Image img = item.DataContext as Image;
+
+                if (img != null)
+                {
+                    if (item.Tag.ToString() == "Fill")
+                        img.Stretch = Stretch.Fill;
+                    else if (item.Tag.ToString() == "UniformToFill")
+                        img.Stretch = Stretch.UniformToFill;
+                    else img.Stretch = Stretch.Uniform;
+                }
+            }
+        }
+
+	]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

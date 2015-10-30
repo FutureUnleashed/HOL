@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      Image with a flyout menu
+    </Title>
+    <Description>
+      Image with a flyout menu
+    </Description>
+
+    <Shortcut>
+      contextmenuimage
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="XAML">
+      <![CDATA[
+      <Image Source="Assets\Halo.png" FlyoutBase.AttachedFlyout="{StaticResource ImageMenuFlyout}" DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}" Tapped="Image_Tapped" Width="500" Height="400" HorizontalAlignment="Center" />
+	]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

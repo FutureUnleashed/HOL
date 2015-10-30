@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      C# Code for Button Flyout Event Handlers
+    </Title>
+    <Description>
+      C# Code for Button Flyout Event Handlers
+    </Description>
+
+    <Shortcut>
+      buttonflyoutcode
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp">
+      <![CDATA[
+
+        bool IsShuffleEnabled, IsRepeatEnabled;
+        private void Reset_Click(object sender, RoutedEventArgs e)
+        {
+            IsShuffleEnabled = false;
+            ShuffleToggle.Text = "Shuffle";
+
+            IsRepeatEnabled = false;
+            RepeatToggle.Text = "Repeat";
+        }
+
+        private void ShuffleToggle_Click(object sender, RoutedEventArgs e)
+        {
+            if (ShuffleToggle.IsChecked == true)
+            {
+                IsShuffleEnabled = true;
+                ShuffleToggle.Text = "Shuffle off";
+            }
+            else
+            {
+                IsShuffleEnabled = false;
+                ShuffleToggle.Text = "Shuffle";
+            }
+        }
+
+        private void RepeatToggle_Click(object sender, RoutedEventArgs e)
+        {
+            if (RepeatToggle.IsChecked == true)
+            {
+                IsRepeatEnabled = true;
+                RepeatToggle.Text = "Repeat off";
+            }
+            else
+            {
+                IsRepeatEnabled = false;
+                RepeatToggle.Text = "Repeat";
+            }
+        }
+
+	]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

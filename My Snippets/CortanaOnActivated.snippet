@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+	C# Code for Cortana OnActivated 
+    </Title>
+    <Description>
+	C# Code for Cortana OnActivated
+    </Description>
+
+    <Shortcut>
+	CortanaOnActivated
+    </Shortcut>
+
+    <Author>Aparna</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp"><![CDATA[
+     protected override void OnActivated(IActivatedEventArgs args)
+        {
+            base.OnActivated(args);
+
+            if(args.Kind != ActivationKind.VoiceCommand)
+            {
+                return;
+            }
+            var commandArgs = args as VoiceCommandActivatedEventArgs;
+            var speechRecognitionResult = commandArgs.Result;
+            var command = speechRecognitionResult.Text;
+
+            Frame rootFrame = Window.Current.Content as Frame;
+
+            if (rootFrame == null)
+            {
+                // Create a Frame to act as the navigation context and navigate to the first page
+                rootFrame = new Frame();
+
+                rootFrame.NavigationFailed += OnNavigationFailed;
+
+              
+                // Place the frame in the current Window
+                Window.Current.Content = rootFrame;
+            }
+
+            if (rootFrame.Content == null)
+            {
+                // When the navigation stack isn't restored navigate to the first page,
+                // configuring the new page by passing required information as a navigation
+                // parameter
+                rootFrame.Navigate(typeof(CortanaPage), speechRecognitionResult.Text);
+            }
+
+            Window.Current.Activate();
+        }
+
+	]]></Code>
+  </Snippet>
+</CodeSnippet>

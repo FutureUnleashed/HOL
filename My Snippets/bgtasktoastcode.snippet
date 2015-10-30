@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      C# Code for background handling of toast actions
+    </Title>
+    <Description>
+      C# Code for background handling of toast actions
+    </Description>
+
+    <Shortcut>
+      bgtasktoastcode
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp">
+      <![CDATA[
+		var details = taskInstance.TriggerDetails as ToastNotificationActionTriggerDetail;
+		var arguments = details.Arguments;
+		var input = details.Input.Lookup(“1”);
+	]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

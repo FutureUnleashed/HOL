@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+	C# Code for OnNavigatedTo Share Source 
+    </Title>
+    <Description>
+	C# Code for OnNavigatedTo Share Source 
+    </Description>
+
+    <Shortcut>
+	ShareSourceOnNavigatedTo
+    </Shortcut>
+
+    <Author>Aparna</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp"><![CDATA[
+      	
+	DataTransferManager dataTransferManager;
+
+      
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+
+            dataTransferManager = DataTransferManager.GetForCurrentView();
+
+            dataTransferManager.DataRequested += new TypedEventHandler<DataTransferManager,
+
+            DataRequestedEventArgs>(this.ShareHandler);
+         
+
+        }
+	]]></Code>
+  </Snippet>
+</CodeSnippet>

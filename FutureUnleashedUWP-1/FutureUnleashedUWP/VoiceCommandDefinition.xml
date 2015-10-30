@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+
+
+
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.2">
+  <CommandSet xml:lang="en-us" Name="UniversalAppCommandSet_en-us">
+    <CommandPrefix>apchin</CommandPrefix>
+    <Example> Show Mumbai in places </Example>
+
+    <Command Name="showPlaces">
+      <Example>  Show places to visit in Mumbai  </Example>
+      <ListenFor > Show places [to] [visit] in Mumbai </ListenFor>
+
+      <ListenFor > [show] [me] [some] places [to] [visit] at Mumbai </ListenFor>
+
+      <Feedback> Showing places </Feedback>
+      <Navigate/>
+    </Command>
+
+
+  </CommandSet>
+</VoiceCommands>
+
+
+
+
+

@@ -1,0 +1,59 @@
+﻿<Page
+    x:Class="FutureUnleashedUWP.ShareTarget"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FutureUnleashedUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" x:Name="C1"/>
+            <ColumnDefinition Width="*" x:Name="C2"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120" x:Name="R1"/>
+            <RowDefinition Height="*" x:Name="R2"/>
+        </Grid.RowDefinitions>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="wideView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="C1.Width" Value="120"/>
+                        <Setter Target="titleText.Text" Value="FutureUnleashed (Desktop)"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="narrowView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="C1.Width" Value="20"/>
+                        <Setter Target="titleText.Text" Value="FutureUnleashed (Mobile)"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <TextBlock Text="FutureUnleashed" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource HeaderTextBlockStyle}" x:Name="titleText"/>
+
+        <VariableSizedWrapGrid Grid.Column="1" Grid.Row="1">
+
+            <TextBlock x:Name="sharedContentTitle" Height="100" Width="500" TextWrapping="Wrap" />
+            <TextBlock x:Name="sharedText" Height="100" Width="500" TextWrapping="Wrap" />
+            <WebView x:Name="ShareWebView" Visibility="Visible" HorizontalAlignment="Left" Width="500" Height="950" />
+            <TextBlock x:Name="sharedFiles" Height="100" Width="500" TextWrapping="Wrap" />
+
+        </VariableSizedWrapGrid>
+
+
+    </Grid>
+</Page>

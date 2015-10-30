@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+	C# Code for Command Bar Flyout Event Handlers
+    </Title>
+    <Description>
+	C# Code for Command Bar Flyout Event Handlers
+    </Description>
+
+    <Shortcut>
+	cmdbarflyoutcode
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp"><![CDATA[
+
+        private void SortMenuFlyoutItem_Click(object sender, RoutedEventArgs e)
+        {
+            MenuFlyoutItem selectedItem = sender as MenuFlyoutItem;
+
+            if (selectedItem != null)
+            {
+                if (selectedItem.Tag.ToString() == "rating")
+                {
+                    //SortByRating();
+                }
+                else if (selectedItem.Tag.ToString() == "match")
+                {
+                    //SortByMatch();
+                }
+                else if (selectedItem.Tag.ToString() == "distance")
+                {
+                    //SortByDistance();
+                }
+            }
+        }
+
+	]]></Code>
+  </Snippet>
+</CodeSnippet>

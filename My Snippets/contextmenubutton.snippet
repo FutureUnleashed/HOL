@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      Button with a flyout menu
+    </Title>
+    <Description>
+      Button with a flyout menu
+    </Description>
+
+    <Shortcut>
+      contextmenubutton
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="XAML">
+      <![CDATA[
+            <Button Content="Options" Margin="20" HorizontalAlignment="Center">
+                <Button.Flyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Text="Reset" Click="Reset_Click"/>
+                        <MenuFlyoutSeparator/>
+                        <ToggleMenuFlyoutItem x:Name="ShuffleToggle" Text="Shuffle"  Click="ShuffleToggle_Click" 
+                IsChecked="{Binding IsShuffleEnabled, Mode=TwoWay}"/>
+                        <ToggleMenuFlyoutItem x:Name="RepeatToggle" Text="Repeat"  Click="RepeatToggle_Click"
+                IsChecked="{Binding IsRepeatEnabled, Mode=TwoWay}"/>
+                    </MenuFlyout>
+                </Button.Flyout>
+            </Button>
+	]]></Code>
+  </Snippet>
+</CodeSnippet>

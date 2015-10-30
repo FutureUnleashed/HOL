@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      BackButton Event Handler Function in MainPage.xaml.cs
+    </Title>
+    <Description>
+      BackButton Event Handler Function in MainPage.xaml.cs
+    </Description>
+
+    <Shortcut>
+      BackButtonFunction
+    </Shortcut>
+
+    <Author>Aparna</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp">
+      <![CDATA[	
+            if (this.Frame.CanGoBack)
+            {
+                this.Frame.GoBack();
+                e.Handled = true;
+            }
+	]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

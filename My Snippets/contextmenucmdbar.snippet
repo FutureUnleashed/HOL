@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      Command bar with a flyout menu
+    </Title>
+    <Description>
+      COmmand bar with a flyout menu
+    </Description>
+
+    <Shortcut>
+      contextmenucmdbar
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="XAML">
+      <![CDATA[      
+        <CommandBar VerticalAlignment="Bottom" Grid.ColumnSpan="2" Grid.RowSpan="2" IsOpen="False">
+            <AppBarButton Icon="Sort" IsCompact="True">
+                <Button.Flyout>
+                    <MenuFlyout>
+                        <MenuFlyoutItem Text="By rating" Tag="rating"
+                            Click="SortMenuFlyoutItem_Click"/>
+                        <MenuFlyoutItem Text="By match" Tag="match" 
+                            Click="SortMenuFlyoutItem_Click"/>
+                        <MenuFlyoutItem Text="By distance" Tag="distance" 
+                            Click="SortMenuFlyoutItem_Click"/>
+                    </MenuFlyout>
+                </Button.Flyout>
+            </AppBarButton>
+        </CommandBar>      
+	]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

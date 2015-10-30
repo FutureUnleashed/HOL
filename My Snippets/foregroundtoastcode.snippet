@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      C# Code for foreground handling of toast actions
+    </Title>
+    <Description>
+      C# Code for foreground handling of toast actions
+    </Description>
+
+    <Shortcut>
+      foregroundtoastcode
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp">
+      <![CDATA[
+   	If (args.Kind == ActivationKind.ToastNotification)
+	  {
+        var toastArgs = args as ToastNotificationActivatedEventArgs;
+		    var arguments = toastArgs.Arguments;
+		    var input = toastArgs.UserInput[“1”]; 
+    }
+	]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      HOL Buttons - Toasts
+    </Title>
+    <Description>
+      XAML for adding buttons for UWP HOL
+    </Description>
+
+    <Shortcut>
+      toastbuttonsxaml
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="XAML">
+      <![CDATA[
+        <ScrollViewer Grid.ColumnSpan="2" Grid.Row="1" >
+            <VariableSizedWrapGrid Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="NormalToast" Content="Normal Toast" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="ActionToast" Content="Toast with Actions" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="InputToast" Content="Toast with Inputs" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="InputToast2" Content="Toast with Inputs 2" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="SelectionToast" Content="Toast with Selection" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="ReminderToast" Content="Toast with Reminders" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="SnoozeDismiss" Content="Snooze and Dismiss" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="SnoozeDismiss2" Content="Snooze and Dismiss 2" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+            </VariableSizedWrapGrid>
+        </ScrollViewer>
+            ]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

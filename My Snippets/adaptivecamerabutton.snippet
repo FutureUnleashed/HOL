@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      Adaptive code for camera button handler
+    </Title>
+    <Description>
+      Adaptive code for camera button handler
+    </Description>
+
+    <Shortcut>
+      adaptivecamerabutton
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp">
+      <![CDATA[
+            bool isHardwareButtonsAPIPresent = Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Phone.UI.Input.HardwareButtons");
+
+            if (isHardwareButtonsAPIPresent)
+            {
+                Windows.Phone.UI.Input.HardwareButtons.CameraPressed +=
+                    HardwareButtons_CameraPressed;
+            }
+
+	]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

@@ -1,0 +1,65 @@
+﻿<Page
+    x:Class="FutureUnleashedUWP.ShareSource"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FutureUnleashedUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" x:Name="C1"/>
+            <ColumnDefinition Width="*" x:Name="C2"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120" x:Name="R1"/>
+            <RowDefinition Height="*" x:Name="R2"/>
+            <RowDefinition Height="*" x:Name="R3"/>
+        </Grid.RowDefinitions>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="wideView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="C1.Width" Value="120"/>
+                        <Setter Target="titleText.Text" Value="FutureUnleashed (Desktop)"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="narrowView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="C1.Width" Value="20"/>
+                        <Setter Target="titleText.Text" Value="FutureUnleashed (Mobile)"/>
+                        <Setter Target="titleText.Text" Value="FutureUnleashed (Mobile)"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <TextBlock Text="FutureUnleashed" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource HeaderTextBlockStyle}" x:Name="titleText"/>
+
+        <StackPanel Orientation="Vertical" Grid.ColumnSpan="2" Grid.Row ="1" HorizontalAlignment="Center" VerticalAlignment="Top">
+
+            <Button x:Name="ShareText" Content="Share Text" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click" />
+            <Button x:Name="ShareHTML" Content="Share HTML" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+            <Button x:Name="ShareFiles" Content="Share Files" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+
+        </StackPanel>
+
+
+
+
+
+    </Grid>
+</Page>

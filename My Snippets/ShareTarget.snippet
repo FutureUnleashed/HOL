@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+	C# code for Share Operation
+    </Title>
+    <Description>
+	C# code for Share Operation
+    </Description>
+
+    <Shortcut>
+	ShareTarget
+    </Shortcut>
+
+    <Author>Aparna</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp"><![CDATA[
+	
+        ShareOperation so = null;
+       
+        private IReadOnlyList<IStorageItem> sharedStorageItems;
+
+
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
+        {
+          
+                this.so = (ShareOperation)e.Parameter;
+                sharedContentTitle.Text = so.Data.Properties.Title.ToString();
+
+
+                if (this.so.Data.Contains(StandardDataFormats.Text))
+                {
+                    sharedText.Text = await this.so.Data.GetTextAsync();
+
+                }
+
+                //if (this.so.Data.Contains(StandardDataFormats.Html))
+                //{
+                //    string HtmlString = await this.so.Data.GetHtmlFormatAsync();
+                //    string htmlFragment = HtmlFormatHelper.GetStaticFragment(HtmlString);
+                  
+
+                //    ShareWebView.NavigateToString("<html><body>" + htmlFragment + "</body></html>"); ;
+                //}
+
+                //if (this.so.Data.Contains(StandardDataFormats.StorageItems))
+                //{
+                //    sharedStorageItems = await this.so.Data.GetStorageItemsAsync();
+
+                //    sharedFiles.Text = "Share File Name: " + sharedStorageItems[0].Path;
+                
+                //}                           
+
+
+        }
+
+
+	]]></Code>
+  </Snippet>
+</CodeSnippet>

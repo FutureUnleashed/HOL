@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      XAML Page Setup
+    </Title>
+    <Description>
+      XAML for setting up pages for HOL
+    </Description>
+
+    <Shortcut>
+      mainpagesetupxaml
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="XAML">
+      <![CDATA[
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" x:Name="C1"/>
+            <ColumnDefinition Width="*" x:Name="C2"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120" x:Name="R1"/>
+            <RowDefinition Height="*" x:Name="R2"/>
+        </Grid.RowDefinitions>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="wideView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="C1.Width" Value="120"/>
+                        <Setter Target="titleText.Text" Value="FutureUnleashed (Desktop)"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="narrowView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="C1.Width" Value="20"/>
+                        <Setter Target="titleText.Text" Value="FutureUnleashed (Mobile)"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <TextBlock Text="FutureUnleashed" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource HeaderTextBlockStyle}" x:Name="titleText"/>
+	]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+	C# Code Background Task OnNavigated
+    </Title>
+    <Description>
+	C# Code Background Task OnNavigated
+    </Description>
+
+    <Shortcut>
+	BGTaskPage
+    </Shortcut>
+
+    <Author>Aparna</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp"><![CDATA[
+      	
+	           protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            var builder = new BackgroundTaskBuilder();
+            builder.Name = "HelloWorld";
+            builder.TaskEntryPoint = "BGTasks.BG";
+            builder.SetTrigger(new SystemTrigger(SystemTriggerType.NetworkStateChange, false));
+            var results = builder.Register();
+            BGText.Text = "Background Task has been registered";
+			
+        }
+	]]></Code>
+  </Snippet>
+</CodeSnippet>

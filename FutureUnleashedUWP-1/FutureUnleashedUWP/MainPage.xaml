@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="FutureUnleashedUWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FutureUnleashedUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="120" x:Name="C1"/>
+            <ColumnDefinition Width="*" x:Name="C2"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120" x:Name="R1"/>
+            <RowDefinition Height="*" x:Name="R2"/>
+        </Grid.RowDefinitions>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="wideView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="C1.Width" Value="120"/>
+                        <Setter Target="titleText.Text" Value="FutureUnleashed (Desktop)"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="narrowView">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="C1.Width" Value="20"/>
+                        <Setter Target="titleText.Text" Value="FutureUnleashed (Mobile)"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <TextBlock Text="FutureUnleashed" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Style="{StaticResource HeaderTextBlockStyle}" x:Name="titleText"/>
+
+
+        <ScrollViewer Grid.ColumnSpan="2" Grid.Row="1">
+            <VariableSizedWrapGrid Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="RelativePanel" Content="Relative Panel" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="BGTask" Content="Background Task" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="BGTransfer" Content="Background Transfers" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="Share" Content="Share Contracts" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="Cortana" Content="Speech and Cortana" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="Tiles" Content="Tiles" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="Toasts" Content="Toasts" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="ContextMenu" Content="Context Menu" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="Data"  Content="Connected Apps" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+            </VariableSizedWrapGrid>
+        </ScrollViewer>
+
+    </Grid>
+</Page>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      HOL Buttons - MainPage
+    </Title>
+    <Description>
+      XAML for adding buttons for UWP HOL
+    </Description>
+
+    <Shortcut>
+      mainpagebuttonsxaml
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="XAML">
+      <![CDATA[
+        <ScrollViewer Grid.ColumnSpan="2" Grid.Row="1">
+            <VariableSizedWrapGrid Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button x:Name="RelativePanel" Content="Relative Panel" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="Tiles" Content="Tiles" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="Toasts" Content="Toasts" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="BGTask" Content="Background Task" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="BGTransfer" Content="Background Transfers" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="Share" Content="Share Contracts" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="ContextMenu" Content="Context Menu" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="Cortana" Content="Speech and Cortana" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+                <Button x:Name="Data"  Content="Connected Apps" Height="50" Width="175" Background="DarkCyan" Foreground="White" Margin="20" Click="Button_Click"/>
+            </VariableSizedWrapGrid>
+        </ScrollViewer>
+	]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

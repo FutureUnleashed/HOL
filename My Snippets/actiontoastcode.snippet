@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      C# Code for toasts with action
+    </Title>
+    <Description>
+      C# Code for toasts with action
+    </Description>
+
+    <Shortcut>
+      actiontoastcode
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp">
+      <![CDATA[
+        private void ShowWithAction()
+        {
+            string myXml = @"
+                            <toast>
+                              <visual>
+                                <binding template=""ToastGeneric"">
+                                  <text>Microsoft Company Store</text>
+                                  <text>New Halo game is back in stock!</text>
+                                  <image placement=""appLogoOverride"" src=""Assets/StoreLogo.png"" />
+                                  <image placement=""inline"" src=""Assets/Halo.png"" hint-crop=""none"" />
+                                </binding>
+                              </visual>
+                              <actions>
+                                <action activationType=""foreground"" content=""show details"" arguments=""details"" imageUri=""Assets/Check.png""/>
+                                <action activationType=""background"" content=""maybe later"" arguments=""later"" imageUri=""Assets/Cancel.png""/>
+                                <action activationType=""protocol"" content=""show map"" arguments=""bingmaps:?q=Microsoft"" />
+                              </actions>
+                            </toast>
+                            ";
+
+            XmlDocument myToastXml = new XmlDocument();
+            myToastXml.LoadXml(myXml);
+
+            ToastNotification myToast = new ToastNotification(myToastXml);
+            ToastNotificationManager.CreateToastNotifier().Show(myToast);
+        }
+	]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      C# Code for roaming data
+    </Title>
+    <Description>
+      C# Code for roaming data
+    </Description>
+
+    <Shortcut>
+      roamingdatacode
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp">
+      <![CDATA[
+
+        private void Current_DataChanged(ApplicationData sender, object args)
+        {
+            Object value = roamingSettings.Values["SeekValue"];
+
+        }
+
+        private void mediaElement_CurrentStateChanged(object sender, RoutedEventArgs e)
+        {
+            var myMediaElement = sender as MediaElement;
+            TimeSpan timeSpan = new TimeSpan(0);
+
+
+            switch (myMediaElement.CurrentState)
+            {
+                case MediaElementState.Opening:
+                    break;
+
+                case MediaElementState.Paused:
+                    Object value = roamingSettings. Values["SeekValue"];
+                    if (value != null)
+                    {
+                        TimeSpan seekTime = (TimeSpan)value;
+                        TimeSpan zeroTime = new TimeSpan(0);
+                        if (myMediaElement.Position == zeroTime)
+                        {
+                            myMediaElement.Position = seekTime;
+                            roamingSettings.Values.Remove("SeekValue");
+                        }
+                    }
+                    break;
+
+                case MediaElementState.Playing:
+                    break;
+
+                case MediaElementState.Stopped:
+                    break;
+
+                default:
+                    break;
+            }
+            
+            if (myMediaElement.CurrentState == MediaElementState.Paused && myMediaElement.Position != timeSpan)
+            {
+                roamingSettings.Values["SeekValue"] = myMediaElement.Position;
+                ApplicationData.Current.SignalDataChanged();
+            }
+        }
+
+	]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

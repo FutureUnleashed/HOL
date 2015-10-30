@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      C# Code for Toast Switch..Case
+    </Title>
+    <Description>
+      C# Code for Toast Switch..Case
+    </Description>
+
+    <Shortcut>
+      toastswitchcasecode
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp">
+      <![CDATA[
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var senderButton = sender as Button;
+
+            switch (senderButton.Name)
+            {
+                case "NormalToast":
+                    //ShowNormal();
+                    break;
+
+                case "ActionToast":
+                    //ShowWithAction();
+                    break;
+
+                case "InputToast":
+                    //ShowWithInputs();
+                    break;
+
+                case "InputToast2":
+                    //ShowWithInputs2();
+                    break;
+
+                case "SelectionToast":
+                    //ShowWithSelection();
+                    break;
+
+                case "ReminderToast":
+                    //ShowReminder();
+                    break;
+
+                case "SnoozeDismiss":
+                    //ShowSnoozeDismiss();
+                    break;
+
+                case "SnoozeDismiss2":
+                    //ShowSnoozeDismiss2();
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+	]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

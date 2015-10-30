@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      C# Code for snooze and dismiss toast
+    </Title>
+    <Description>
+      C# Code for snooze and dismiss toast
+    </Description>
+
+    <Shortcut>
+      snoozetoastcode
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp">
+      <![CDATA[
+        private void ShowSnoozeDismiss()
+        {
+            string myXml = @"
+                            <toast scenario=""reminder"">
+                              <visual>
+                                <binding template=""ToastGeneric"">
+                                  <text>Time to Fly</text>
+                                  <text>It's time to take your flight to Bangalore!</text>
+                                  <image placement=""appLogoOverride"" src=""Assets\44.png"" />
+                                  <image placement=""inline"" src=""hiking.png"" />
+                                </binding>
+                              </visual>
+                              <actions hint-systemCommands = ""SnoozeAndDismiss"">
+                              </actions>
+                            </toast>
+                            ";
+
+            XmlDocument myToastXml = new XmlDocument();
+            myToastXml.LoadXml(myXml);
+
+            ToastNotification myToast = new ToastNotification(myToastXml);
+            ToastNotificationManager.CreateToastNotifier().Show(myToast);
+        }
+	]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

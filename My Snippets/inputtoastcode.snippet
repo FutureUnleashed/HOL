@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+      C# Code for toasts with inputs
+    </Title>
+    <Description>
+      C# Code for toasts with inputs
+    </Description>
+
+    <Shortcut>
+      inputtoastcode
+    </Shortcut>
+
+    <Author>Ashish</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp">
+      <![CDATA[
+        private void ShowWithInputs()
+        {
+            string myXml = @"
+                            <toast>
+                              <visual>
+                                <binding template=""ToastGeneric"">
+                                  <text>Ashish</text>
+                                  <text>Shall we meet up at 8?</text>
+                                  <image placement=""appLogoOverride"" src=""Assets\44.png"" />
+                                </binding>
+                              </visual>
+                              <actions>
+                                <input id=""message"" type=""text"" placeHolderContent=""reply here"" />
+                                <action activationType=""background"" content=""reply"" arguments=""reply"" />
+                                <action activationType=""foreground"" content=""video call"" arguments=""video"" />
+                              </actions>
+                            </toast>
+                            ";
+
+            XmlDocument myToastXml = new XmlDocument();
+            myToastXml.LoadXml(myXml);
+
+            ToastNotification myToast = new ToastNotification(myToastXml);
+            ToastNotificationManager.CreateToastNotifier().Show(myToast);
+        }
+	]]>
+    </Code>
+  </Snippet>
+</CodeSnippet>

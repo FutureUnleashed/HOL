@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+	C# Code for Background Transfer 
+    </Title>
+    <Description>
+	C# Code for Background Transfer Download Button
+    </Description>
+
+    <Shortcut>
+	BGTransferButton
+    </Shortcut>
+
+    <Author>Aparna</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp"><![CDATA[
+      
+        
+          private async void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string serverAddressField = "http://distribution.bbb3d.renderfarming.net//video/png/00_00/0001.png";
+            Uri source = new Uri(serverAddressField);
+
+            string destination = "TEST.png";
+
+            StorageFile destinationFile = await KnownFolders.PicturesLibrary.CreateFileAsync(
+                destination, CreationCollisionOption.GenerateUniqueName);
+
+            BackgroundDownloader downloader = new BackgroundDownloader();
+            DownloadOperation download = downloader.CreateDownload(source, destinationFile);
+
+            Progress<DownloadOperation> progressCallback = new Progress<DownloadOperation>();
+
+            await download.StartAsync();
+          
+			// await download.StartAsync().AsTask(cts.Token,progressCallback);
+
+        }
+
+        
+
+	]]></Code>
+  </Snippet>
+</CodeSnippet>

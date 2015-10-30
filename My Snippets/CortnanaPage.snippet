@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+	C# Code for Cortana OnNavigated
+    </Title>
+    <Description>
+	C# Code for Cortana OnNavigated
+    </Description>
+
+    <Shortcut>
+	CortanaPage
+    </Shortcut>
+
+    <Author>Aparna</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp"><![CDATA[
+	
+        protected override void OnNavigatedTo(NavigationEventArgs args)
+        {
+            if (args.Parameter != null)
+            {
+                string r = args.Parameter.ToString();
+                CortanaText.Text = r;
+                PlacesList.Visibility = Visibility.Visible;
+            }
+        }
+
+	]]></Code>
+  </Snippet>
+</CodeSnippet>

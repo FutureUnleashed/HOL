@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippet Format="1.0.0" xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <Header>
+    <SnippetTypes>
+      <SnippetType>Expansion</SnippetType>
+    </SnippetTypes>
+
+    <Title>
+	C# Code for Background Transfer 
+    </Title>
+    <Description>
+	C# Code for Background Transfer Show Progress
+    </Description>
+
+    <Shortcut>
+	BGTransferProgress
+    </Shortcut>
+
+    <Author>Aparna</Author>
+    <HelpUrl>
+    </HelpUrl>
+  </Header>
+  <Snippet>
+    <Code Language="CSharp"><![CDATA[
+      
+        CancellationTokenSource cts;
+         private void DownloadProgress(DownloadOperation download)
+        {
+
+            BackgroundDownloadProgress currentProgress = download.Progress;
+            double percent = 100;
+            if (currentProgress.TotalBytesToReceive > 0)
+            {
+                percent = currentProgress.BytesReceived * 100 / currentProgress.TotalBytesToReceive;
+            }
+            Status.Text = (String.Format(
+                CultureInfo.CurrentCulture,
+                " - Transfered bytes: {0} of {1}, {2}%",
+                currentProgress.BytesReceived,
+                currentProgress.TotalBytesToReceive,
+                percent));
+
+        }
+
+	]]></Code>
+  </Snippet>
+</CodeSnippet>
