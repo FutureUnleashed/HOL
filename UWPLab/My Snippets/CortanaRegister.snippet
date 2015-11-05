@@ -24,7 +24,7 @@
     <Code Language="CSharp"><![CDATA[
          private async void Register()
         {
-            var storageFile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-	appx:///VoiceCommandDefinition.xml"));
+            var storageFile = await Windows.Storage.StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///VoiceCommandDefinition.xml"));
 
             await 	Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.InstallCommandDefinitionsFromStorageFileAsync(storageFile);
         }
